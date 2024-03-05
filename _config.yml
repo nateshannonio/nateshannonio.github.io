@@ -68,6 +68,10 @@ defaults:
   - scope:
       path: "/categories/"
       type: liquid
+  # tags
+  - scope:
+      path: "/tags/"
+      type: liquid
 
 # category_archive:
 #   type: liquid
