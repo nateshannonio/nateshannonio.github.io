@@ -18,27 +18,6 @@
       "docker:enableMajor",
       "docker:pinDigests"
     ],
-    "terraform": {                                                                
-      "depTypes": ["helm_release"]                                               
-    },
-    "regexManagers": [
-      {
-        "fileMatch": ["\\.tf$"],
-        "matchStrings": [
-          "default = {\\n    repo    = \"(?<registryUrl>.*?)\"\\n    version = \"(?<currentValue>([0-9]+).([0-9]+).([0-9]+))\"\\n    path    = \"(?<depName>[a-z].+)\""
-        ],
-        "datasourceTemplate": "helm"
-      }
-    ],
-    "hostRules": [
-      {
-        "hostType": "terraform-module",
-        "matchHost": "app.terraform.io",
-        "encrypted": {
-            "token": "wcFMA0PkEWLSrVUOARAA1cOi4yVLnVM4frW87g3JqX4wcs6t/KxdUvLLV03m5KfD9m7efLBkMk+4zIfK3cGAI16UdGu6U7d4ucmj4OlB0qqE/vymn53ZPCehwLEo9Uf8lAfVtNU3WYQmLNfR91a3QVcMdjD8iyy02KIvZL85jsF+KhKFTBv3LD61iPqTQGMNRne+bC9WZH7p6TUR248H3UHsjhxYf+AhU0TOK1ZGq1bydst7I1DEW0kPkj74YGhJnWLIR5GGB/dS5NyAuBD5D13qTGu8coo9rZpG2HGW3XGeCttJUVGbt9HKUouop4HxlAYzVorHuHlsAFIKp9NZXNFmOAsU1ubgR5ZdTPfaH0gvSq9Uq+d00yhCeFbIzljKU1OGymNT/ZvYUuAWVh2qFN4aQr6eknWYiQbLmw+aZFESEBNHriZvR5/DDJM/vMtJ8gBHr4Y/4IfSxNINwH0/7SMtCZnuVrRsOtbQAAI5Hng5N2fih8WPV3yEx1oZZvHnqGEZG/ifOxVG8fGwg10euaZWoqff5NaLgsC6CFxtOJwYTyY4olJtJtlPjjUr5NBNc0gADJKQFPocOcqJ0hMIAd+yPPdmnnke2PrOfK60Thdy6rCiakpS+wwFBWnh+7zJo8dRQxqHr2dUR34bg83XPZzItyL7J7AUrcw6CAiuqKBZ4Op3vKxX4Pd8TdrkH3LSrgE+xwv5bYItBbgUQ5Lv8+Aqa7ve+t1hNEsvuH1A8vmmP+buKTZqazWDLzohKClowUxRYOkcQWc65GRSjqaTnD4+puybpnaSXWtSi2swKLELjq6IjyXuGfFGf7HSDHBh2pW5Utu3HeKTza+jb9P9RuuBDaGNgOGYytk2C09noFYp4Km422Hm28C3TceKkPrjq/A2R5jrFTb0dwIHhP4a3RcFt7Ol+f1KpsZ7VwUc1A"
-        }
-      }
-    ],
     "packageRules": [
       {
         "matchUpdateTypes": ["major"],
