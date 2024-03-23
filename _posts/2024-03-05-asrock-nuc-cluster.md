@@ -73,7 +73,9 @@ Bootstrapping the cluster with Terraform -
 
 Over the time I've spent with Terraform, I've made quite a few mistakes, but one setup I've started to like is the idea of base and composite modules. I'll explain more in a different topic, so for now, I'll just reference the modules I use.
 
-I utilize terraform to bootstrap my kubernetes cluster with the bare minimum needed such as, [argo-cd](https://argo-cd.readthedocs.io/en/stable/), [onepassword-connect](https://developer.1password.com/docs/connect/), and [longhorn](https://longhorn.io/). 
+I utilize terraform to bootstrap my kubernetes cluster with the bare minimum needed such as, [argo-cd](https://argo-cd.readthedocs.io/en/stable/), [onepassword-connect](https://developer.1password.com/docs/connect/), and [longhorn](https://longhorn.io/). This gives me a seperation of duties between services. In addition, there are some helm charts that don't natively support have secrets integration, and expect the values to contain the password(s). By using Terraform, I can pull the secrets and pass them into Terraform helm_release objects. Not perfect, but it works for my usecase. 
+
+With my homelab, I also utilize Terraform Cloud as the backend, and self-host my own terraform agent. This allows me to perform plan/applies from a central location within my cluster, and not deal with everything scattered.
 
 ArgoCD - 
 
